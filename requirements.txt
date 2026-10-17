@@ -1,0 +1,8 @@
+# 运行时依赖
+# codecpod：音频编解码核心，构建时静态链接 FFmpeg，运行时零外部共享库依赖。
+#           预编译 wheel 已覆盖 Windows x86_64（cp38-abi3，兼容 Python 3.8+）。
+codecpod>=0.3.1
+numpy>=1.21
+
+# 构建依赖（打包为单文件 exe）
+pyinstaller>=6.6

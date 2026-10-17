@@ -1,0 +1,69 @@
+# ============================================================
+#  音频转 MP3 便携工具 —— .gitignore
+# ============================================================
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+build/
+sdist/
+develop-eggs/
+.installed.cfg
+
+# ---- 虚拟环境 ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- 打包与交付产物 ----
+dist/
+*.manifest
+warn-*.txt
+
+# ---- 测试 / 临时目录 ----
+build/_smoke/
+build/_gui/
+build/good/
+build/exe_out/
+
+# ---- 本地工具与编辑器配置（不发布）----
+.commandcode/
+.idea/
+*.iml
+*.suo
+*.user
+
+# ---- 敏感文件（本项目不包含，但防止误提交）----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials*
+secrets*
+*.sql
+*.sqlite
+*.db
+
+# ---- 日志与备份 ----
+*.log
+AudioToMP3_error.log
+*.bak
+*.old
+*.orig
+*.tmp
+
+# ---- 操作系统文件 ----
+.DS_Store
+Thumbs.db
+desktop.ini
