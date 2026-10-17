@@ -1,0 +1,76 @@
+# ---- 本地机密 / 令牌（绝不提交）----
+.access_token
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa
+id_rsa.*
+credentials
+credentials.*
+secrets
+secrets.*
+
+# ---- 虚拟环境 / 依赖 ----
+.venv/
+venv/
+env/
+ENV/
+node_modules/
+
+# ---- Python 产物 ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- 构建产物 ----
+dist/
+build/
+target/
+*.spec
+
+# ---- 本地临时目录与缓存（本项目专用）----
+.tmp/
+.cache/
+.pip-tmp/
+
+# ---- 测试产物 ----
+tests/out/
+
+# ---- 工具本地状态 ----
+.commandcode/
+.idea/
+.vscode/
+*.code-workspace
+
+# ---- 日志 / 数据库 / 备份 ----
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.backup
+*.old
+*.tmp
+
+# ---- 压缩包（避免把旧包当源码提交）----
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+# ---- 系统缓存文件 ----
+.DS_Store
+Thumbs.db
+desktop.ini

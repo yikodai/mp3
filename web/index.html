@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8E%B5%3C/text%3E%3C/svg%3E">
+<title>音频转 MP3 · Web 版</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="hero">
+    <h1>音频转 MP3 <span class="tag">Web 版</span></h1>
+    <p class="sub">把常见格式的音频批量转成 MP3，全程在服务器内存中完成，不在磁盘保存任何音频。</p>
+  </header>
+
+  <div id="toast" class="toast" role="alert" hidden></div>
+  <noscript><div class="toast show">当前浏览器已禁用 JavaScript，无法使用本工具。</div></noscript>
+
+  <section class="panel">
+    <div id="dropzone" class="dropzone" tabindex="0" role="button"
+         aria-label="拖拽或点击选择音频文件">
+      <input id="fileInput" type="file" multiple hidden>
+      <p class="dz-main">把音频文件拖到这里，或 <button id="pickBtn" class="link" type="button">点击选择文件</button></p>
+      <p class="dz-hint">支持多选与拖拽；常见格式：wav / flac / m4a / aac / ogg / wma / aiff / ape / opus 等</p>
+    </div>
+
+    <div class="options">
+      <label class="field">
+        <span>MP3 比特率</span>
+        <select id="bitrate">
+          <option value="128">128 kbps</option>
+          <option value="192" selected>192 kbps</option>
+          <option value="256">256 kbps</option>
+          <option value="320">320 kbps</option>
+        </select>
+      </label>
+      <label class="check">
+        <input id="zipCheck" type="checkbox" checked>
+        <span>转换完成后打包为 ZIP</span>
+      </label>
+      <span class="sr-note">采样率保持与源文件一致</span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="toolbar">
+      <span id="count" class="count">共 0 个文件</span>
+      <div class="toolbar-actions">
+        <span id="limitHint" class="limit-hint"></span>
+        <button id="clearBtn" class="btn ghost" type="button">清空列表</button>
+      </div>
+    </div>
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty">尚未添加文件。</p>
+  </section>
+
+  <section class="panel actions">
+    <button id="convertBtn" class="btn primary" type="button" disabled>
+      <span class="spinner" aria-hidden="true"></span>
+      <span id="convertLabel">转换为 MP3</span>
+    </button>
+    <button id="retryBtn" class="btn ghost" type="button" hidden>重试失败项</button>
+    <div class="progress-wrap">
+      <div class="progress"><div id="bar" class="bar"></div></div>
+      <span id="status" class="status" aria-live="polite">就绪</span>
+    </div>
+  </section>
+
+  <section id="resultsPanel" class="panel" hidden>
+    <h2 class="h2">转换结果</h2>
+    <p id="summary" class="summary"></p>
+    <div id="zipRow" class="zip-row" hidden></div>
+    <ul id="results" class="list results"></ul>
+  </section>
+
+  <footer class="foot">
+    <span>服务由服务器上的 Python 进程提供，关闭服务窗口即停止。</span>
+    <span id="health" class="health">·</span>
+  </footer>
+
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

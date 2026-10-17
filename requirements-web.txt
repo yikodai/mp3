@@ -1,0 +1,9 @@
+# Web 版运行依赖（部署 Windows 服务器时只需这些）
+#
+# codecpod：音频编解码核心，构建时静态链接 FFmpeg，运行时零外部共享库依赖。
+#           预编译 wheel 已覆盖 Windows x86_64（cp38-abi3，兼容 Python 3.8+）。
+# 注意：codecpod 较新，部分镜像（如清华 TUNA）可能尚未同步，建议用阿里云/腾讯云镜像。
+codecpod>=0.3.1
+numpy>=1.21
+
+# 桌面版打包才需要 pyinstaller，Web 版不需要，故不在此列出。
