@@ -235,8 +235,8 @@ PyInstaller 对多数包都有官方 hook，但本项目有三处必须手动处
 
 ## 联系方式
 
-**TODO**：作者与联系方式待补充。
+**yikodai**：作者与联系方式待补充。
 
-- 作者：TODO
-- 邮箱：TODO
+- 作者：yikodai
+- 邮箱：18771101233@139.com
 - 仓库：<https://github.com/yikodai/mp3>
